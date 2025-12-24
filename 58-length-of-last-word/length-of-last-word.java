@@ -1,7 +1,20 @@
-class Solution {
+public class Solution {
     public int lengthOfLastWord(String s) {
-        s = s.trim(); // Remove leading and trailing spaces
-        int lastSpace = s.lastIndexOf(' ');
-        return s.length() - lastSpace - 1;
+        char[] ch = s.toCharArray();
+        int i = ch.length - 1;
+        int length = 0;
+
+       
+        while (i >= 0 && ch[i] == ' ') {
+            i--;
+        }
+
+     
+        while (i >= 0 && ch[i] != ' ') {
+            length++;
+            i--;
+        }
+
+        return length;
     }
 }
